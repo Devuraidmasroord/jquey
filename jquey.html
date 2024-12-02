@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="t1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, necessitatibus.</p>
+    <p id="t2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt exercitationem nemo sunt nihil quasi.
+    </p>
+    <p class="t3" tabindex="0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita libero dolorem in
+        veniam aliquid, sit suscipit
+        ullam nulla ducimus.</p>
+    <p class="t4">Lorem ipsum dolor sit amet.</p>
+    <div style="margin-top: 40px; border: 2px solid black;" class="itemz">
+        <p class="t5">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum maiores ut eaque enim nesciunt cum ducimus
+            magnam ipsa tempore non. Facilis magni repudiandae doloremque sint adipisci odio rem eos repellendus labore
+            consectetur ab corporis, quisquam corrupti illo sapiente temporibus officiis enim ex fugit quod! Nisi
+            inventore aliquid vero cumque ad.
+        </p>
+    </div>
+    <button style="margin-top: 30px;" class="but">HIDE/SHOW</button>
+    <button style="margin-top: 30px;" class="bnt">Text hide/show</button>
+</body>
+
+<script>
+    $(document).ready(function () {
+        console.log('jQuery run');
+        $('.t1').click(function () {
+            $('.t1').css('color', 'blue')
+            console.log('Color has been changed')
+        });
+        $('#t2').hover(function () {
+            $('#t2').css('color', "green",)
+            console.log("This item is bieng hovered")
+        })
+        $(document).ready(function () {
+            $(document).keydown(function (event) {
+                if (event.which === 70) {
+                    $('.t3').hide(); 
+                    console.log("This item is now hidden because the F key was pressed");
+                }
+                if (event.which === 83) {
+                    $('.t3').show(); 
+                    console.log("This item is now visible because the S key was pressed");
+                }
+            });
+        });
+
+        $('.t4').dblclick(function () {
+            $('.t4').css('color', 'orange')
+            console.log('Color has been changed')
+        });
+        $('.but').click(function () {
+            $('.itemz').slideToggle(5000);
+        });
+
+        $('.bnt').click(function () {
+            $('.t5').fadeToggle();
+        })
+    });
+
+</script>
+
+</html>
