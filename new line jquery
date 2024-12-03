@@ -9,3 +9,23 @@ $(document).ready(function() {
         return false;
     });
 });
+or
+
+$(document).ready(function () {
+    $('#sform').submit(function () {
+        event.preventDefault();
+        console.log("form submitted");
+        var formValues = "";
+        $('input[type="text"]').each(function () {
+            var name = $(this).attr('name');
+            var value = $(this).val();
+            formValues += name + ": " + value + "\n";
+        });
+        $('input[type="text1"]').each(function () {
+            var name = $(this).attr('name');
+            var value = $(this).val();
+            formValues += name + ": " + value + "\n";
+        });
+        alert(formValues);
+    });
+});
